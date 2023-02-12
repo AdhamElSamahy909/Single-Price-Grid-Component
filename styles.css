@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--grayish-blue);
+    font-family: 'Karla', sans-serif;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0.88px 0.88px 7px hsl(230, 7%, 66%);
+    border-radius: 13px;
+    transition: all 0.2s ease-in-out;
+    animation: appear 1.5s ease;
+}
+
+main:hover {
+    box-shadow: 0 0.875rem 1.75rem rgba(28, 35, 43, 0.25), 0 0.625rem 0.625rem rgba(28, 35, 43, 0.22);
+}
+
+.join-community, .subscription, .why-us{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.join-community {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: #fff;
+    padding: 2.9em 3em 2.9em 3em;
+    border-radius: 13px 13px 0 0;
+}
+
+.join-community h1 {
+    font-size: 1.7rem;
+    color: var(--cyan);
+    font-weight: 700;
+}
+
+.info1 {
+    color: var(--bright-yellow);
+    padding: 1em 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.info2 {
+    color: var(--grayish-blue);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.subscription {
+    background-color: var(--cyan);
+    color: #fff;
+    padding: 1.7em 3em 2.1em 3em;
+    border-radius: 0 0 0 13px;
+}
+
+.subscription h1 {
+    font-size: 1.25rem;
+    padding-bottom: 1.1em;
+}
+
+.subscription h2 {
+    font-size: 1.9rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 0.3em;
+}
+
+.subscription h2 span {
+    font-size: 0.855rem;
+    padding-left: 0.8em;
+    color: var(--light-gray);
+}
+
+.subscription p {
+    font-size: 1.05rem;
+    padding-bottom: 1.5em;
+}
+
+.subscription button {
+    background-color: var(--bright-yellow);
+    border-radius: 13px;
+    width: 100%;
+    height: 41px;
+    border-style: none;
+    color: #fff;
+}
+
+.subscription button:hover {
+    color: var(--bright-yellow);
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.why-us {
+    background-color: hsl(179, 52%, 51%);
+    padding: 1em 3em 2.1em 3em;
+    border-radius: 0 0 13px 0;
+}
+
+.why-us h1 {
+    color: #fff;
+    font-size: 1.25rem;
+    padding-bottom: 1.1em;
+}
+
+.why-us p {
+    color: var(--light-gray);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.attribution {
+    flex-basis: 0%;
+    position: relative;
+    top: 50px;
+    background-color:whitesmoke;
+    font-size: 14px;
+    padding: 0.7rem;
+    border-radius: 0.75rem;
+    font-family: 'Montserrat', sans-serif;
+    animation: appear 1.5s ease;
+}
+
+p.attribution a {
+    color:rgb(46, 146, 141);
+}
+
+@media screen and (max-width: 375px) {
+
+    main {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: none;
+    }
+
+    .join-community {
+        padding: 2.1em 30px;
+        grid-column:auto;
+    }
+
+    .subscription {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        border-radius: 0;
+        padding: 2.1em 30px;
+    }
+
+    .why-us {
+        grid-row-start: 3;
+        border-radius: 0 0 13px 13px;
+        padding: 2.1em 30px;
+    }
+}
